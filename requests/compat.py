@@ -8,7 +8,8 @@ This module handles import compatibility issues between Python 2 and
 Python 3.
 """
 
-import chardet
+# import chardet
+import charset_normalizer as chardet
 
 import sys
 
