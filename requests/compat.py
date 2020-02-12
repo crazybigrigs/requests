@@ -8,8 +8,6 @@ This module handles import compatibility issues between Python 2 and
 Python 3.
 """
 
-# import chardet
-import charset_normalizer as chardet
 
 import sys
 
@@ -47,7 +45,7 @@ if is_py2:
     # Keep OrderedDict for backwards compatibility.
     from collections import Callable, Mapping, MutableMapping, OrderedDict
 
-
+    import chardet
     builtin_str = str
     bytes = str
     str = unicode
@@ -64,7 +62,7 @@ elif is_py3:
     # Keep OrderedDict for backwards compatibility.
     from collections import OrderedDict
     from collections.abc import Callable, Mapping, MutableMapping
-
+    import charset_normalizer as chardet
     builtin_str = str
     str = str
     bytes = bytes
